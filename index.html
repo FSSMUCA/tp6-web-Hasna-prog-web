@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Définit l'encodage des caractères en UTF-8 pour supporter les caractères spéciaux -->
+    <meta charset="UTF-8">
+    
+    <!-- Rend la page responsive sur mobile en définissant la largeur sur celle de l'appareil -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Titre qui apparaît dans l'onglet du navigateur -->
+    <title> Calculatrice Web - TP6</title>
+    
+    <!-- Lien vers le fichier CSS externe -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Calculatrice Web</h1>
+        <p>TP6 - Application Web Interactive</p>
+    </header>
+    <main>
+        <div class="container">
+            <!-- Titre de la section -->
+            <h2 style="color: #667eea; margin-bottom: 1.5rem;">Effectuer un calcul</h2>
+
+            <!-- Formulaire de calcul -->
+            <form id="calculForm">
+                <!-- Champ Nombre A -->
+                <div class="form-group">
+                    <label for="nombreA">Nombre A :</label>
+                    <input type="number" id="nombreA" step="any" placeholder="Entrez le premier nombre">
+                </div>
+
+                <!-- Champ Nombre B -->
+                <div class="form-group">
+                    <label for="nombreB">Nombre B :</label>
+                    <input type="number" id="nombreB" step="any" placeholder="Entrez le second nombre">
+                </div>
+
+                <!-- Menu déroulant pour l'opération -->
+                <div class="form-group">
+                    <label for="operation">Opération :</label>
+                    <select id="operation">
+                        <option value="+">Addition (+)</option>
+                        <option value="-">Soustraction (-)</option>
+                        <option value="*">Multiplication (x)</option>
+                        <option value="/">Division (÷)</option>
+                    </select>
+                </div>
+
+                <!-- Bouton de calcul -->
+                <button type="button" id="btnCalculer">Calculer</button>
+            </form>
+
+            <!-- Zone d'affichage des erreurs (cachée par défaut) -->
+            <div class="error-message" id="errorMessage"></div>
+
+            <!-- Section Historique -->
+            <div class="historique-section">
+                <h2>Historique des opérations</h2>
+                <ul id="historiqueList">
+                    <li style="color: #999; font-style: italic;">Aucune opération effectuée</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 - TP6 Programmation Web | Hasna Hmirouch</p>
+        <p><a href="info.php" style="color: #667eea; text-decoration: none;">Voir la page PHP →</a></p>
+    </footer>
+
+    <!-- Lien vers le fichier JavaScript externe -->
+    <script src="app.js"></script>
+</body>
+</html>

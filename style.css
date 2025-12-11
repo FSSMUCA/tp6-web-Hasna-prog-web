@@ -1,0 +1,337 @@
+/* === RÉINITIALISATION DES MARGES ET PADDINGS === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === STYLE GÉNÉRAL DU BODY === */
+body {
+    /* Police moderne sans-serif */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* Dégradé de fond bleu-violet moderne */
+    background: linear-gradient(135deg, #669bea 0%, #744ba2 100%);
+    
+    /* Hauteur minimale de 100% de la fenêtre pour couvrir tout l'écran */
+    min-height: 100vh;
+    
+    /* Flexbox pour organiser header, main, footer verticalement */
+    display: flex;
+    flex-direction: column;
+    
+    /* Couleur de texte par défaut */
+    color: #333;
+}
+
+/* === HEADER (EN-TÊTE) === */
+header {
+    /* Fond blanc avec légère transparence */
+    background-color: rgba(255, 255, 255, 0.95);
+    
+    /* Ombre portée pour effet de profondeur */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    
+    /* Espacement intérieur */
+    padding: 2rem 1rem;
+    
+    /* Centrage du texte */
+    text-align: center;
+}
+
+/* Titre principal dans le header */
+header h1 {
+    color: #667eea;
+    font-size: 2.5rem;
+    letter-spacing: 1px; /* Espacement entre les lettres */
+}
+
+/* Sous-titre dans le header */
+header p {
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* === MAIN (CONTENU PRINCIPAL) === */
+main {
+    /* Prend tout l'espace disponible entre header et footer */
+    flex: 1;
+    
+    /* Flexbox pour centrer le contenu */
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;     /* Centre verticalement */
+    
+    /* Espacement autour */
+    padding: 2rem 1rem;
+}
+
+/* Conteneur principal (carte blanche) */
+.container {
+    /* Fond blanc */
+    background: white;
+    
+    /* Coins arrondis */
+    border-radius: 20px;
+    
+    /* Ombre pour effet de carte flottante */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    
+    /* Espacement intérieur */
+    padding: 2.5rem;
+    
+    /* Largeur maximale */
+    max-width: 500px;
+    width: 100%;
+}
+
+/* === FORMULAIRE === */
+/* Groupe de champs (label + input) */
+.form-group {
+    /* Espacement entre les groupes */
+    margin-bottom: 1.5rem;
+}
+
+/* Style des labels */
+label {
+    /* Affichage en bloc pour occuper toute la largeur */
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 600; /* Texte en gras */
+}
+
+/* Style des inputs et select */
+input[type="number"],
+select {
+    /* Prend toute la largeur disponible */
+    width: 100%;
+    
+    /* Espacement intérieur */
+    padding: 0.8rem;
+    
+    /* Bordure grise */
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    
+    /* Taille de police */
+    font-size: 1rem;
+    
+    /* Transition douce lors du changement de bordure */
+    transition: border-color 0.3s;
+}
+
+/* Effet au focus (quand on clique dans le champ) */
+input[type="number"]:focus,
+select:focus {
+    /* Supprime le contour par défaut du navigateur */
+    outline: none;
+    
+    /* Bordure violette au focus */
+    border-color: #667eea;
+}
+
+/* === BOUTON === */
+button {
+    /* Prend toute la largeur */
+    width: 100%;
+    
+    /* Espacement intérieur */
+    padding: 1rem;
+    
+    /* Dégradé de fond violet */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    
+    /* Texte blanc */
+    color: white;
+    
+    /* Pas de bordure */
+    border: none;
+    border-radius: 8px;
+    
+    /* Police */
+    font-size: 1.1rem;
+    font-weight: 600;
+    
+    /* Curseur pointer au survol */
+    cursor: pointer;
+    
+    /* Transitions pour les effets hover */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Effet au survol du bouton */
+button:hover {
+    /* Légère élévation du bouton */
+    transform: translateY(-2px);
+    
+    /* Ombre plus prononcée */
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Effet lors du clic */
+button:active {
+    /* Retour à la position normale */
+    transform: translateY(0);
+}
+
+/* === ZONE D'ERREUR === */
+.error-message {
+    /* Fond rouge clair */
+    background-color: #fee;
+    
+    /* Bordure rouge à gauche */
+    border-left: 4px solid #f44336;
+    
+    /* Texte rouge foncé */
+    color: #c62828;
+    
+    /* Espacement */
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    
+    /* Caché par défaut */
+    display: none;
+}
+
+/* Classe pour afficher l'erreur (ajoutée via JavaScript) */
+.error-message.show {
+    display: block;
+}
+
+/* === SECTION HISTORIQUE === */
+.historique-section {
+    /* Espacement au-dessus */
+    margin-top: 2rem;
+    padding-top: 2rem;
+    
+    /* Bordure en haut pour séparer */
+    border-top: 2px solid #e0e0e0;
+}
+
+/* Titre de la section historique */
+.historique-section h2 {
+    color: #667eea;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Liste de l'historique */
+#historiqueList {
+    /* Supprime les puces de liste */
+    list-style: none;
+}
+
+/* Carte pour chaque opération dans l'historique */
+.operation-card {
+    /* Dégradé de fond gris-bleu */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    
+    /* Espacement */
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+    
+    /* Ombre légère */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    /* Animation d'apparition */
+    animation: slideIn 0.3s ease;
+}
+
+/* Animation de glissement à l'apparition */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Texte du calcul dans la carte */
+.operation-card .calcul {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Résultat dans la carte */
+.operation-card .resultat {
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* === FOOTER (PIED DE PAGE) === */
+footer {
+    /* Fond blanc avec transparence */
+    background-color: rgba(255, 255, 255, 0.95);
+    
+    /* Centrage du texte */
+    text-align: center;
+    
+    /* Espacement */
+    padding: 1.5rem;
+    
+    /* Couleur du texte */
+    color: #666;
+}
+
+/* Style des liens dans le footer */
+footer a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+/* === RESPONSIVE DESIGN === */
+/* Pour les écrans de moins de 768px (tablettes et mobiles) */
+@media (max-width: 768px) {
+    /* Réduction de la taille du titre */
+    header h1 {
+        font-size: 2rem;
+    }
+
+    /* Ajustement du conteneur */
+    .container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    /* Réduction de la taille du bouton */
+    button {
+        font-size: 1rem;
+    }
+}
+
+/* Pour les très petits écrans (moins de 480px) */
+@media (max-width: 480px) {
+    /* Titre encore plus petit */
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Padding réduit */
+    .container {
+        padding: 1rem;
+    }
+
+    /* Police plus petite */
+    body {
+        font-size: 14px;
+    }
+    
+    /* Taille des cartes d'historique réduite */
+    .operation-card {
+        padding: 0.8rem;
+    }
+}
