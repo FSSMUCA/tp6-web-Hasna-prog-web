@@ -11,7 +11,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
     /* Dégradé de fond bleu-violet moderne */
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #669bea 0%, #744ba2 100%);
     
     /* Hauteur minimale de 100% de la fenêtre pour couvrir tout l'écran */
     min-height: 100vh;

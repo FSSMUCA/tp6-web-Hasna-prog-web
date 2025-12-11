@@ -28,13 +28,6 @@ function cacherErreur() {
 }
 
 // === FONCTION DE VALIDATION DES DONNÉES ===
-/**
- * Vérifie que les données saisies sont valides
- * @param {string} a - Valeur du premier nombre (string car vient d'un input)
- * @param {string} b - Valeur du second nombre
- * @param {string} op - Opération choisie (+, -, *, /)
- * @returns {boolean} - true si valide, false sinon
- */
 function validerDonnees(a, b, op) {
     // === Vérification 1 : Champs vides ===
     if (a === '' || b === '') {
@@ -129,7 +122,7 @@ function afficherHistorique() {
         // === Déterminer le symbole à afficher ===
         let symbole = item.operation;
         // Remplacer * par × et / par ÷ pour un affichage plus lisible
-        if (item.operation === '*') symbole = '×';
+        if (item.operation === '*') symbole = 'x';
         if (item.operation === '/') symbole = '÷';
 
         // === Créer le contenu HTML de la carte ===
@@ -138,10 +131,10 @@ function afficherHistorique() {
         // ${variable} insère la valeur de la variable (template literal)
         li.innerHTML = `
             <div class="calcul">
-                ${item.a} ${symbole} ${item.b}
+                ${item.a} ${symbole} ${item.b};
             </div>
             <div class="resultat">
-                = ${item.resultat}
+                = ${item.resultat};
             </div>
         `;
 
@@ -184,17 +177,7 @@ btnCalculer.addEventListener('click', function() {
     });
 
     // === 6. Mettre à jour l'affichage ===
-    afficherHistorique();
-
-    // === OPTIONNEL : Vider les champs après calcul ===
-    // Décommenter les lignes ci-dessous si vous voulez effacer les champs
-    // nombreA.value = '';
-    // nombreB.value = '';
-    
-    // Mettre le focus sur le premier champ (curseur dans le champ)
-    // nombreA.focus();
-});
-
+    afficherHistorique();});
 // === INITIALISATION ===
 // Affiche l'historique au chargement de la page (vide au début)
 afficherHistorique();
@@ -212,4 +195,4 @@ document.addEventListener('keypress', function(event) {
 // === CONSOLE LOG POUR DÉBOGAGE ===
 // Message dans la console pour confirmer que le script est chargé
 console.log('Script app.js chargé avec succès !');
-console.log('Historique initialisé :', historique);
+console.log('Historique initialisé :', historique)
